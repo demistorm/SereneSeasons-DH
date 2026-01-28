@@ -10,13 +10,10 @@ accessible method net/minecraft/world/level/biome/Biome getTemperature (Lnet/min
 mutable field net/minecraft/client/renderer/BiomeColors GRASS_COLOR_RESOLVER Lnet/minecraft/world/level/ColorResolver;
 mutable field net/minecraft/client/renderer/BiomeColors FOLIAGE_COLOR_RESOLVER Lnet/minecraft/world/level/ColorResolver;
 
-# Game rules
-accessible method net/minecraft/world/level/GameRules register (Ljava/lang/String;Lnet/minecraft/world/level/GameRules$Category;Lnet/minecraft/world/level/GameRules$Type;)Lnet/minecraft/world/level/GameRules$Key;
-accessible method net/minecraft/world/level/GameRules$BooleanValue create (Z)Lnet/minecraft/world/level/GameRules$Type;
+# Game rules (entries removed - no longer needed in 1.21.11)
 
 # Seasonal melting
 accessible field net/minecraft/server/level/ChunkMap level Lnet/minecraft/server/level/ServerLevel;
-accessible method net/minecraft/server/level/ChunkMap getChunks ()Ljava/lang/Iterable;
 accessible method net/minecraft/server/level/ChunkMap anyPlayerCloseEnoughForSpawning (Lnet/minecraft/world/level/ChunkPos;)Z
 accessible method net/minecraft/world/level/block/IceBlock melt (Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;)V
 accessible method net/minecraft/server/level/ChunkMap forEachBlockTickingChunk (Ljava/util/function/Consumer;)V
