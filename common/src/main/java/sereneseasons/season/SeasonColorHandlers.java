@@ -12,6 +12,7 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.BlockAndTintGetter;
 import net.minecraft.world.level.ColorResolver;
 import net.minecraft.world.level.FoliageColor;
+import net.minecraft.world.level.GrassColor;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Blocks;
@@ -113,6 +114,15 @@ public class SeasonColorHandlers
 
     private static int originalColorFor(Holder<Biome> biomeHolder, double x, double z, ResolverType type)
     {
+        if (biomeHolder == null)
+        {
+            // Return default colors when biome holder is null (e.g., during GUI rendering)
+            return switch (type) {
+                case GRASS -> GrassColor.get(0.5, 0.5);
+                case FOLIAGE -> FoliageColor.get(0.5, 0.5);
+            };
+        }
+
         ColorResolver resolver = switch (type) {
             case GRASS -> originalGrassColorResolver;
             case FOLIAGE -> originalFoliageColorResolver;
